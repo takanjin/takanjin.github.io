@@ -1,0 +1,24 @@
+.nav-link[rel="next"] {display: none;}
+.nav-link[rel="prev"] {display: none;}
+
+.media-grid{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
+.media-figure{display:flex;flex-direction:column;gap:.5rem}
+.media-figure figcaption{font-size:.9rem;line-height:1.4}
+/*common aspect*/
+.media-tile{aspect-ratio:1/1;background:#000;border-radius:8px;overflow:hidden}
+/* --- A) triming（cover） --- */
+.media-tile.cover img,
+.media-tile.cover video{width:100%;height:100%;object-fit:cover;object-position:center}
+.media-tile.cover .yt{position:relative;width:100%;height:100%}
+.media-tile.cover .yt iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+/* --- B) letterbox（contain） --- */
+.media-tile.contain img,
+.media-tile.contain video{width:100%;height:100%;object-fit:contain;display:block}
+.media-tile.contain .yt{display:flex;align-items:center;justify-content:center;width:100%;height:100%}
+.media-tile.contain .yt iframe{
+ aspect-ratio:1/1; /* video aspect*/
+ width:100%;
+ height:auto;
+ max-height:100%;
+ border:0;
+}
